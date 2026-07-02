@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-dcb-layer = "0.1.0"
+dcb-layer = "0.2.1"
 anyhow = "1"
 bytes = "1"
 async-trait = "0.1"

@@ -1,45 +1,45 @@
-performance:
-  name: warmup-write-one-tag-one-type
-  mode: write
-  warmup_seconds: 1
-  duration_seconds: 60
-  samples_per_second: 2
-  concurrency:
-    writers: [4]
-  operations:
-    write:
-      event_size_bytes: 256
-      concurrency_control: true
-      append_condition: one_tag_one_type
-
-  stores:
-    - umadb
-    - axonserver
-    - postgres-dcb-ttcte
-    - foundationdb-dcb
----
-performance:
-  name: warmup-read-one-tag-one-type
-  mode: read
-  warmup_seconds: 1
-  duration_seconds: 60
-  samples_per_second: 2
-  concurrency:
-    readers: [4]
-  operations:
-    write:
-      event_size_bytes: 256
-    read:
-      dcb_query: one_tag_one_type
-  setup:
-    prepopulate_events: 50000
-    prepopulate_streams: 5000
-  stores:
-    - umadb
-    - axonserver
-    - postgres-dcb-ttcte
-    - foundationdb-dcb
----
+# performance:
+#   name: warmup-write-one-tag-one-type
+#   mode: write
+#   warmup_seconds: 1
+#   duration_seconds: 60
+#   samples_per_second: 2
+#   concurrency:
+#     writers: [4]
+#   operations:
+#     write:
+#       event_size_bytes: 256
+#       concurrency_control: true
+#       append_condition: one_tag_one_type
+#
+#   stores:
+#     - umadb
+#     - axonserver
+#     - postgres-dcb-ttcte
+#     - foundationdb-dcb
+# ---
+# performance:
+#   name: warmup-read-one-tag-one-type
+#   mode: read
+#   warmup_seconds: 1
+#   duration_seconds: 60
+#   samples_per_second: 2
+#   concurrency:
+#     readers: [4]
+#   operations:
+#     write:
+#       event_size_bytes: 256
+#     read:
+#       dcb_query: one_tag_one_type
+#   setup:
+#     prepopulate_events: 50000
+#     prepopulate_streams: 5000
+#   stores:
+#     - umadb
+#     - axonserver
+#     - postgres-dcb-ttcte
+#     - foundationdb-dcb
+# ---
 performance:
   name: write-one-tag-one-type
   mode: write
@@ -55,9 +55,9 @@ performance:
       append_condition: one_tag_one_type
 
   stores:
-    - umadb
-    - axonserver
-    - postgres-dcb-ttcte
+    # - umadb
+    # - axonserver
+    # - postgres-dcb-ttcte
     - foundationdb-dcb
 ---
 performance:
@@ -79,7 +79,7 @@ performance:
     prepopulate_streams: 5000
 
   stores:
-    - umadb
-    - axonserver
-    - postgres-dcb-ttcte
+    # - umadb
+    # - axonserver
+    # - postgres-dcb-ttcte
     - foundationdb-dcb
